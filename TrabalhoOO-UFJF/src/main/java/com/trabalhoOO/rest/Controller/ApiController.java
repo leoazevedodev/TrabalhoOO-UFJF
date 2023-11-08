@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.trabalhoOO.rest.Models.User;
+import com.trabalhoOO.rest.Models.Usuario;
 import com.trabalhoOO.rest.Repo.UserRepo;
 
 @RestController
@@ -27,28 +27,28 @@ public class ApiController {
     }
 
     @GetMapping(value = "/users")
-    public List<User> getUsers()
+    public List<Usuario> getUsers()
     {
         return userRepo.findAll();
     }
 
     @PostMapping(value = "/save")
-    public String saveUser(@RequestBody User user)
+    public String saveUser(@RequestBody Usuario user)
     {
         userRepo.save(user);
         return "Usuário Salvo !";
     }
 
     @PutMapping(value = "/update/{id}")
-    public String updateUser(@PathVariable long id, @RequestBody User user)
+    public String updateUser(@PathVariable long id, @RequestBody Usuario user)
     {
-        User updateUser = userRepo.findById(id).get();
+        Usuario updateUser = userRepo.findById(id).get();
 
-        updateUser.setFirstName(user.getFirstName());
-        updateUser.setLastName(user.getLastName());
-        updateUser.setAge(user.getAge());
-        updateUser.setOcupation(user.getOcupation());
-        userRepo.save(updateUser);
+        // updateUser.setFirstName(user.getFirstName());
+        // updateUser.setLastName(user.getLastName());
+        // updateUser.setAge(user.getAge());
+        // updateUser.setOcupation(user.getOcupation());
+        // userRepo.save(updateUser);
 
         return "Usuário Atualizado !";
     }
