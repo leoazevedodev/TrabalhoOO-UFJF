@@ -3,7 +3,7 @@ package com.trabalhoOO.rest.Models;
 import jakarta.persistence.*;
 
 @Entity
-public class Desenvolvedora {
+public class Desenvolvedora extends Usuario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,9 @@ public class Desenvolvedora {
 
     @Column
     private Float Faturamento;
+
+    @Column
+    private Float CNPJ;
 
 
     public long getId() 
@@ -57,5 +60,15 @@ public class Desenvolvedora {
     public void setFaturamento(Float faturamento) 
     {
         Faturamento = faturamento;
+    }
+
+    public Float getCNPJ() 
+    {
+        return CNPJ;
+    }
+
+    public void setCNPJ(Float cNPJ) 
+    {
+        CNPJ = cNPJ;
     }
 }

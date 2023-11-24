@@ -3,7 +3,7 @@ package com.trabalhoOO.rest.Models;
 import jakarta.persistence.*;
 
 @Entity
-public class Usuario {
+public abstract class Usuario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,7 @@ public class Usuario {
     @Column
     private String Senha;
 
+    /*
     @Column
     private int Idade;
 
@@ -30,6 +31,9 @@ public class Usuario {
     @Column
     private String Status;
 
+    @Column
+    private double Carteira;
+    */
 
     public long getId() 
     {
@@ -71,6 +75,7 @@ public class Usuario {
         Senha = senha;
     }
 
+    /*
     public int getIdade() 
     {
         return Idade;
@@ -110,4 +115,24 @@ public class Usuario {
     {
         Status = status;
     }
+    
+    
+
+    public double getCarteira() 
+    {
+        return Carteira;
+    }
+
+    public void setCarteira(double carteira) 
+    {
+        Carteira = carteira;
+    }
+
+    public void adicionarCarteira(double valor)
+    {
+        Carteira += valor;
+    }
+
+   */
+
 }

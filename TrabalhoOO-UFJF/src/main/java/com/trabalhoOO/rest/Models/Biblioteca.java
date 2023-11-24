@@ -16,4 +16,6 @@ public class Biblioteca {
     @OneToOne
     @JoinColumn(name = "UsuarioID", referencedColumnName = "id")
     private Usuario Usuario;
+
+    
 }
