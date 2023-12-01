@@ -21,8 +21,9 @@ public class Usuario {
     @Column
     private int Idade;
 
-    @Column
-    private String Cidade;
+    // Decidir mais tarde se colocar cidade
+//    @Column
+//    private String Cidade;
 
     @Column
     private String Pais;
@@ -81,15 +82,15 @@ public class Usuario {
         Idade = idade;
     }
 
-    public String getCidade() 
-    {
-        return Cidade;
-    }
-
-    public void setCidade(String cidade) 
-    {
-        Cidade = cidade;
-    }
+//    public String getCidade()
+//    {
+//        return Cidade;
+//    }
+//
+//    public void setCidade(String cidade)
+//    {
+//        Cidade = cidade;
+//    }
 
     public String getPais() 
     {
