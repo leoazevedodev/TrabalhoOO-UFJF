@@ -3,7 +3,7 @@ package com.trabalhoOO.rest.Models;
 import jakarta.persistence.*;
 
 @Entity
-public class Usuario {
+public abstract class Usuario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,11 @@ public class Usuario {
 
     @Column
     private String Senha;
+    
 
-    @Column
-    private int Idade;
+    
+    // @Column
+    // private int Idade;
 
     @Column
     private String Cidade;
@@ -27,9 +29,30 @@ public class Usuario {
     @Column
     private String Pais;
 
-    @Column
-    private String Status;
+    // @Column
+    // private String Status;
 
+
+    Usuario() {}
+
+    public Usuario(String nome, String email, String senha, String pais, String cidade) {
+        super();
+        Nome = nome;
+        Email = email;
+        Senha = senha;
+        Pais = pais;
+        Cidade = cidade;
+    }
+
+    // public long getId() 
+    // {
+    //     return Id;
+    // }
+
+    // public void setId(long id) 
+    // {
+    //     Id = id;
+    // }
 
     public long getId() 
     {
@@ -71,15 +94,15 @@ public class Usuario {
         Senha = senha;
     }
 
-    public int getIdade() 
-    {
-        return Idade;
-    }
+    // public int getIdade() 
+    // {
+    //     return Idade;
+    // }
 
-    public void setIdade(int idade) 
-    {
-        Idade = idade;
-    }
+    // public void setIdade(int idade) 
+    // {
+    //     Idade = idade;
+    // }
 
     public String getCidade() 
     {
@@ -101,13 +124,13 @@ public class Usuario {
         Pais = pais;
     }
 
-    public String getStatus() 
-    {
-        return Status;
-    }
+    // public String getStatus() 
+    // {
+    //     return Status;
+    // }
 
-    public void setStatus(String status) 
-    {
-        Status = status;
-    }
+    // public void setStatus(String status) 
+    // {
+    //     Status = status;
+    // }
 }

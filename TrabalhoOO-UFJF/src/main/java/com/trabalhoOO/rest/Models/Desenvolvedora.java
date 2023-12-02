@@ -3,51 +3,66 @@ package com.trabalhoOO.rest.Models;
 import jakarta.persistence.*;
 
 @Entity
-public class Desenvolvedora {
+public class Desenvolvedora extends Usuario {
+
+    Desenvolvedora() {
+        super();
+    }
+
+    public Desenvolvedora(String Nome, String Email, String Senha, String Pais, String Cidade, String CNPJ) {
+        super(Nome, Email, Senha, Pais, Cidade);
+        this.CNPJ = CNPJ;
+    }
+
+
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    // @Id
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // private long Id;
+
+    // @Column
+    // private String Nome;
+
+    // @Column
+    // private int Seguidores;
 
     @Column
-    private String Nome;
+    private Float Faturamento = 0f;
 
     @Column
-    private int Seguidores;
-
-    @Column
-    private Float Faturamento;
+    private String CNPJ;
 
 
-    public long getId() 
-    {
-        return Id;
-    }
 
-    public void setId(long id) 
-    {
-        Id = id;
-    }
+    // public long getId() 
+    // {
+    //     return Id;
+    // }
 
-    public String getNome() 
-    {
-        return Nome;
-    }
+    // public void setId(long id) 
+    // {
+    //     Id = id;
+    // }
 
-    public void setNome(String nome) 
-    {
-        Nome = nome;
-    }
+    // public String getNome() 
+    // {
+    //     return Nome;
+    // }
 
-    public int getSeguidores() 
-    {
-        return Seguidores;
-    }
+    // public void setNome(String nome) 
+    // {
+    //     Nome = nome;
+    // }
+
+    // public int getSeguidores() 
+    // {
+    //     return Seguidores;
+    // }
     
-    public void setSeguidores(int seguidores) 
-    {
-        Seguidores = seguidores;
-    }
+    // public void setSeguidores(int seguidores) 
+    // {
+    //     Seguidores = seguidores;
+    // }
 
     public Float getFaturamento() 
     {
@@ -57,5 +72,15 @@ public class Desenvolvedora {
     public void setFaturamento(Float faturamento) 
     {
         Faturamento = faturamento;
+    }
+
+    public String getCNPJ() 
+    {
+        return CNPJ;
+    }
+
+    public void setCNPJ(String cNPJ) 
+    {
+        CNPJ = cNPJ;
     }
 }
