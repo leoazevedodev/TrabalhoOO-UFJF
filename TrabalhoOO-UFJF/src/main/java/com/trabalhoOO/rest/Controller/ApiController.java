@@ -32,11 +32,15 @@ public class ApiController {
         return userRepo.findAll();
     }
 
+    //Tratamento de exceções tanto na em saveUser quanto em deleteUser e trocar o retorno para booleano
     @PostMapping(value = "/save")
-    public String saveUser(@RequestBody Usuario user)
-    {
-        userRepo.save(user);
-        return "Usuário Salvo !";
+    public boolean saveUser(Usuario user) {
+        try {
+            userRepo.save(user);
+            return true;
+        } catch (Exception e) { //Implementar eventuais falhas
+            return false;
+        }
     }
 
     @PutMapping(value = "/update/{id}")
@@ -54,9 +58,12 @@ public class ApiController {
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    public String deleteUser(@PathVariable long id)
-    {
-        userRepo.deleteById(id);
-        return "Usuário Deletado !";
+    public boolean deleteUser(long id) {
+        try {
+            userRepo.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
