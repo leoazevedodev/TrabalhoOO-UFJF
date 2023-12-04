@@ -1,5 +1,8 @@
 package com.trabalhoOO.rest.Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -26,11 +29,13 @@ public class Desenvolvedora extends Usuario {
     // @Column
     // private int Seguidores;
 
-    @Column
-    private Float Faturamento = 0f;
 
     @Column
     private String CNPJ;
+
+    @Column
+    private List<Jogos> jogos = new ArrayList<Jogos>();
+
 
 
 
@@ -64,15 +69,7 @@ public class Desenvolvedora extends Usuario {
     //     Seguidores = seguidores;
     // }
 
-    public Float getFaturamento() 
-    {
-        return Faturamento;
-    }
-
-    public void setFaturamento(Float faturamento) 
-    {
-        Faturamento = faturamento;
-    }
+    
 
     public String getCNPJ() 
     {

@@ -24,8 +24,8 @@ public abstract class Usuario {
     // private int Idade;
 
     // Decidir mais tarde se colocar cidade
-//    @Column
-//    private String Cidade;
+   @Column
+   private String Cidade;
 
     @Column
     private String Pais;
@@ -134,4 +134,19 @@ public abstract class Usuario {
     // {
     //     Status = status;
     // }
+
+    public String getCidade() 
+    {
+        return Cidade;
+    }
+
+    public void setCidade(String cidade) 
+    {
+        Cidade = cidade;
+    }  
+    
+    public void comprarJogo(Jogos jogo)
+    {
+        
+    }
 }
